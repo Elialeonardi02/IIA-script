@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="unify:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/unify_jar</output-path>
+    <root id="archive" name="unify.jar">
+      <element id="module-output" name="unify" />
+    </root>
+  </artifact>
+</component>
