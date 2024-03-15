@@ -5,11 +5,11 @@ public class Expression{
     List<String> listExp = new ArrayList<String>();
 
     public Expression(String e){
-        String[] splitted = e.split(";");
+        String[] splitted = e.split(",");
         int numParentesi = 0;
         String res = "";
         for (String s : splitted) {
-            numParentesi = countOccurrences(s,'(') - countOccurrences(s,')');
+            numParentesi += countOccurrences(s,'(') - countOccurrences(s,')');
             if (numParentesi == 0){ // se numero parentesi è 0
                 if(res.equals(""))
                     listExp.add(s);
@@ -21,7 +21,7 @@ public class Expression{
                 if (res.equals(""))
                     res = s;
                 else
-                    res = res + "," + s;
+                    res += "," + s;
             }
         }
     }
