@@ -52,6 +52,10 @@ public class Main {
         }
         if (var.equals(x))
             return s;
+        else if (isCon(var) && isCon(x)){
+            s.setFail();
+            return s;
+        }
         else if ((i = s.in(var)) != -1)
             return unify(new Expression(s.listVal.get(i)), new Expression(x), s);
         else if ((i = s.in(x)) != -1)
