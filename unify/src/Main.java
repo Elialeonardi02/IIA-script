@@ -28,7 +28,7 @@ public class Main {
             return unifyVar(x.listExp.remove(0), y.listExp.remove(0), s);
         else if(y.listExp.size() == 1 && isVar(y.listExp.get(0)))
             return unifyVar(y.listExp.remove(0), x.listExp.remove(0), s);
-        // quell'else if del composto lo metto?
+            // quell'else if del composto lo metto?
         else if (x.listExp.size() == 1 && composta(x.listExp.get(0), y.listExp.get(0))) {
             return unify(new Expression(removeNameFunction(x.listExp.get(0))), new Expression(removeNameFunction(y.listExp.get(0))), s);
         } else if(x.listExp.size() > 1 && y.listExp.size() > 1){
@@ -50,7 +50,9 @@ public class Main {
                 x = x.replaceAll(s.listVar.get(j), s.listVal.get(j));
             }
         }
-        if ((i = s.in(var)) != -1)
+        if (var.equals(x))
+            return s;
+        else if ((i = s.in(var)) != -1)
             return unify(new Expression(s.listVal.get(i)), new Expression(x), s);
         else if ((i = s.in(x)) != -1)
             return unify(new Expression(var), new Expression(s.listVal.get(i)), s);
@@ -109,5 +111,3 @@ public class Main {
         }
     }
 }
-
-

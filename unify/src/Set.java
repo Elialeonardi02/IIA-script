@@ -22,11 +22,14 @@ public class Set{
     }
 
     public void ourToString(){
-        if(!fail)
-            for (int i = 0; i < listVar.size(); i++){
+        if(!fail) {
+            if (listVar.size() == 0) {
+                System.out.println("Insieme vuoto");
+            }
+            for (int i = 0; i < listVar.size(); i++) {
                 System.out.println(listVar.get(i) + "/" + listVal.get(i));
             }
-        else{
+        }else{
             System.out.println("FAIL");
         }
 
